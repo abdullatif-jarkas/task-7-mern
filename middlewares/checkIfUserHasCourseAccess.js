@@ -11,7 +11,7 @@ const checkIfUserHasCourseAccess = async (req, res, next) => {
     }
 
     // this post?.user_id will return object, so we want to convert it to string 
-    if (course?.user_id?.toString() == req.user._id.toString()) {
+    if (course?.professor?.toString() == req.user._id.toString()) {
       next(); // Move to the next middleware
     } else {
       // autorization
